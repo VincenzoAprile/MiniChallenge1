@@ -28,8 +28,10 @@ struct RecipeGuide: View {
                             .bold()
                             .padding()
                             
+                            
                     Text("Portions: " + recipes.portions)
                         .padding()
+                        
                     
                         
                     
@@ -48,7 +50,7 @@ struct RecipeGuide: View {
                     }
                     
                 }
-            .background(CustomColor.backgroundColor)
+            .background(CustomColor.backgroundColorDark)
                 .cornerRadius(0)
             .ignoresSafeArea()
         }

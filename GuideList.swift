@@ -4,7 +4,6 @@
 //
 //  Created by Vincenzo Aprile on 20/11/23.
 //
-
 import SwiftUI
 import UIKit
 
@@ -28,23 +27,24 @@ struct GuideList: View {
                     
                     let filteredByCategory = selectedCategory != nil ? recipeList.recipes.filter { $0.category == selectedCategory } : recipeList.recipes
                     
-                    let combinedFilteredPlaces = Array(Set(filteredBySearch).intersection(Set(filteredByCategory)))
+                    let combinedFilteredRecipes = Array(Set(filteredBySearch).intersection(Set(filteredByCategory)))
                     
-                    let sortedPlaces = combinedFilteredPlaces.sorted { $0.name < $1.name }
+                    let sortedRecipes = combinedFilteredRecipes.sorted { $0.name < $1.name }
                     
-                    ForEach(sortedPlaces){ recipe in
+                    ForEach(sortedRecipes){ recipe in
                         NavigationLink{
                             RecipeGuide(recipes: recipe)
                         } label: {
                             ZStack{
                                 GuideSelection(recipes: recipe)
                                     .padding()
-                                    .background(CustomColor.color)
+                                    .background(CustomColor.cardColor)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                                     .padding(5)
                                 LikeButtonView()
-                            } //End ZStack
-                            //End 1
+                                    .accessibilityLabel("Favourite button")
+                            }
+                             //End ZStack
                         } //End label
                         .padding(.horizontal, 10)
                     } //End ForEach
@@ -55,7 +55,7 @@ struct GuideList: View {
                 .searchable(text: $searchText, prompt: "Search places")
                 .navigationTitle("All Recipes")
             } //End ScrollView
-            .background(CustomColor.backgroundColor)
+            .background(CustomColor.backgroundColorDark)
         }//End NavigationSayck
     }
 }

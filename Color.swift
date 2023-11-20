@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CustomColor {
-    static let textColor = Color("TextColor")
-    static let cardColor = Color("AccentColor")
-    static let backgroundColor = Color("BackgroundColor")
-    static let color = Color("CardColor")
+    static let textColor = Color("MainTextColor")
+    static let cardTextColor = Color("CardTextColor")
+    static let cardColor = Color("CardColor")
+    static let backgroundColorDark = Color("BackgroundColor")
     
 
 }
