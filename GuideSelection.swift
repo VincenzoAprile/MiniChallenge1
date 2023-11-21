@@ -29,7 +29,6 @@ struct GuideSelection: View {
                     //.padding(.bottom,-15)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal,-18)
-                    .accessibilityLabel("Cake name")
                     .accessibilityHint("This is the name of the dish")
                 
                     
